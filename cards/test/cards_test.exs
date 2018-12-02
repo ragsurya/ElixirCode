@@ -16,4 +16,9 @@ defmodule CardsTest do
     deck = Cards.create_deck
     refute deck == Cards.shuffle(deck)
   end
+
+  test "allInOne returns the correct number of cards in hand" do
+    {hand, rest_of} = Cards.allInOne(5)
+    assert length(hand) == 5
+  end
 end
